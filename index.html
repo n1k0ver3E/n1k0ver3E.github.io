@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Niko Pon">
+
+
+    
+    
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Niko&#39;s blog">
+<meta property="og:url" content="www.nikochan.cc/index.html">
+<meta property="og:site_name" content="Niko&#39;s blog">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Niko&#39;s blog">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Niko&#39;s blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <style> .article { opacity: 0;} </style>
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Niko&#39;s blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/benti.jpeg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Niko Pon</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/随笔">随笔</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:&#112;&#121;&#102;&#48;&#51;&#49;&#49;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/pyf0311" title="GitHub"></a>
+                            
+                                <a class="fa Facebook" href="https://www.facebook.com/profile.php?id=100009468899465" title="Facebook"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Burpsuite/">Burpsuite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hacker/">Hacker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macOS/">macOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">nikochan</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Niko Pon</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/benti.jpeg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Niko Pon</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/随笔">随笔</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:&#112;&#121;&#102;&#48;&#51;&#49;&#49;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/pyf0311" title="GitHub"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100009468899465" title="Facebook"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-DockerSolution" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/10/30/DockerSolution/" class="article-date">
+      <time datetime="2017-10-30T08:01:21.000Z" itemprop="datePublished">2017-10-30</time>
+</a>
+
+ 
+    <a href="/2017/10/30/DockerSolution/#comments" title="Comments">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2017/10/30/DockerSolution/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/30/DockerSolution/">docker 学习笔记——解决Ubuntu中文乱码问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="0x00-Before-writing"><a href="#0x00-Before-writing" class="headerlink" title="0x00 Before writing"></a>0x00 Before writing</h2><p>自己现在做的项目使用了docker，在进行数据库数据交互的时候发现并不支持中文，但是重新修改Dockerfile明显十分麻烦，后来结合了各种给出了解决方案。但我仍然推荐如果需要支持中文，在Dockerfile中进行环境变量的配置，这样比较方便省心。</p>
+<blockquote>
+<p>当前环境：<br>Docker：Docker version 17.09.0-ce, build afdb6d4<br>Image:Ubuntu 16.04</p>
+</blockquote>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Docker/">Docker</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/10/30/DockerSolution/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-burptocrackactivity" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/24/burptocrackactivity/" class="article-date">
+      <time datetime="2017-09-24T06:05:40.000Z" itemprop="datePublished">2017-09-24</time>
+</a>
+
+ 
+    <a href="/2017/09/24/burptocrackactivity/#comments" title="Comments">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2017/09/24/burptocrackactivity/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/24/burptocrackactivity/">记一次有意思的burp抓包经历</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="0x00-Before-Writing"><a href="#0x00-Before-Writing" class="headerlink" title="0x00 Before Writing."></a>0x00 Before Writing.</h2><p>又是一个不断电不断网的周末夜晚。我又打开了某手游…发现有个抽奖活动！！<br>通过奖品兑换cdkey拿一些奖品。</p>
+<p>抽奖盘大概类似这样的东西⬇️ ⬇️<br><img src="https://pic4.zhimg.com/80/v2-1a0e944f384ade0cbfb88896817f3e57_hd.jpg" alt></p>
+<p>左下角有个抽奖次数，上传图片还可以多次抽奖。<br>但不知道怎么搞的突然意外增加了抽奖次数，让我多抽了一次。这极大的引起了兴趣，感觉这活动页其中好像有些问题，本着打破砂锅问到底的精神，我打开了Burpsuite.<br>【毕竟人之常情，每个人都想多抽几次嘛…</p>
+<h2 id="0x01-开始进行抓包分析"><a href="#0x01-开始进行抓包分析" class="headerlink" title="0x01 开始进行抓包分析"></a>0x01 开始进行抓包分析</h2><p>刚开始对整个抽奖的过程进行一个抓包分析。<br>通过Foxyproxy这个浏览器插件对网页进行代理，包信息被burp捕获到，之后send to Repeater.【Foxyproxy十分好用，简直就是配合burp的神器，一键代理十分方便，在chrome和firefox应用商店中均可下载.</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Hacker/">Hacker</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Burpsuite/">Burpsuite</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hacker/">Hacker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/09/24/burptocrackactivity/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Crawlerweibonotloggin" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/08/03/Crawlerweibonotloggin/" class="article-date">
+      <time datetime="2017-08-03T07:01:10.000Z" itemprop="datePublished">2017-08-03</time>
+</a>
+
+ 
+    <a href="/2017/08/03/Crawlerweibonotloggin/#comments" title="Comments">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2017/08/03/Crawlerweibonotloggin/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/03/Crawlerweibonotloggin/">简单的免登陆抓取新浪微博数据</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="0x00-写在前面"><a href="#0x00-写在前面" class="headerlink" title="0x00 写在前面"></a>0x00 写在前面</h2><p>饭偶像之后承担了写群机器人的工作，所以最近一直在鼓弄爬虫，写了集资实时监控，现在是微博监控，之后还要写其他东西…库亚西。</p>
+<p>之前就看过很多爬微博的一些文章，不过大多需要模拟登录，或者是调用weibo的api，后来貌似API权限逐渐降低，也就变得不实用了。。。</p>
+<p>手机版weibo<code>http://m.weibo.com</code>后加uid便可以进行博文。</p>
+<p>这个爬虫的小程序是通过手机版weibo<code>http://m.weibo.com</code>来进行模拟请求，不是通过分析html代码再通过筛选来完成数据抓取。<br>简单的介绍就是这样，后面是正文！</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Crawler/">Crawler</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/08/03/Crawlerweibonotloggin/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-git-upload" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/06/git-upload/" class="article-date">
+      <time datetime="2017-03-06T10:22:28.000Z" itemprop="datePublished">2017-03-06</time>
+</a>
+
+ 
+    <a href="/2017/03/06/git-upload/#comments" title="Comments">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2017/03/06/git-upload/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/06/git-upload/">Git方式提交代码的超详细教程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="0x00-写在前面"><a href="#0x00-写在前面" class="headerlink" title="0x00 写在前面"></a>0x00 写在前面</h2><p>一直以来Git提交都是Github初学者的拦路虎，我也是经过了那个时期之后才比较清楚和快速的进行代码托管在Github上，这同样也是一份Command备份在自己忘掉的时候比较快速的回忆起来。希望能够帮助到在看这篇文章的你。有建议和问题欢迎再评论框进行交流。O(∩_</p>
+<blockquote>
+<p>macOS Sierra version 10.12.3<br>Terminal:Iterm2</p>
+</blockquote>
+<h2 id="0x01-正文"><a href="#0x01-正文" class="headerlink" title="0x01 正文"></a>0x01 正文</h2><h3 id="Step0-注册账号并创建SSH密钥"><a href="#Step0-注册账号并创建SSH密钥" class="headerlink" title="Step0 注册账号并创建SSH密钥"></a>Step0 注册账号并创建SSH密钥</h3><p>首先我们来创建SSH密钥连接Github服务器和本地。<br>在控制台输入</p>
+<pre><code>ssh-keygen -C &#39;your@email.address&#39; -t rsa   --输入你的邮箱地址</code></pre><p>之后会弹出几行英文，直接回车即可。(作用是来确认使用默认路径)<br>之后出现一块SHA的key。这说明已经创建成功。<br>现在我们要提交key到Github上去。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Git/">Git</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/03/06/git-upload/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-SolutionIpythonInstall" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/16/SolutionIpythonInstall/" class="article-date">
+      <time datetime="2017-02-17T04:41:26.000Z" itemprop="datePublished">2017-02-16</time>
+</a>
+
+ 
+    <a href="/2017/02/16/SolutionIpythonInstall/#comments" title="Comments">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2017/02/16/SolutionIpythonInstall/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/16/SolutionIpythonInstall/">macOS 下通过pip安装Ipython权限问题解决</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="0x00-Before-writing"><a href="#0x00-Before-writing" class="headerlink" title="0x00 Before writing"></a>0x00 Before writing</h3><p>安装了<code>pip</code>之后就开始安装<code>ipython</code>了。使用<code>sudo pip install ipython</code>却一直显示<em>Operation not permitted</em>这让我非常苦恼。</p>
+<blockquote>
+<p>本机 macOS Sierra 10.12.3</p>
+</blockquote>
+<pre><code>Exception:
+Traceback (most recent call last):
+  File &quot;/Library/Python/2.7/site-packages/pip/basecommand.py&quot;, line 209, in main
+    status = self.run(options, args)
+  File &quot;/Library/Python/2.7/site-packages/pip/commands/install.py&quot;, line 317, in run
+    prefix=options.prefix_path,
+  File &quot;/Library/Python/2.7/site-packages/pip/req/req_set.py&quot;, line 732, in install
+    **kwargs
+  File &quot;/Library/Python/2.7/site-packages/pip/req/req_install.py&quot;, line 835, in install
+    self.move_wheel_files(self.source_dir, root=root, prefix=prefix)
+  File &quot;/Library/Python/2.7/site-packages/pip/req/req_install.py&quot;, line 1030, in move_wheel_files
+    isolated=self.isolated,
+  File &quot;/Library/Python/2.7/site-packages/pip/wheel.py&quot;, line 376, in move_wheel_files
+    clobber(source, dest, False, fixer=fixer, filter=filter)
+  File &quot;/Library/Python/2.7/site-packages/pip/wheel.py&quot;, line 315, in clobber
+    ensure_dir(destdir)
+  File &quot;/Library/Python/2.7/site-packages/pip/utils/__init__.py&quot;, line 83, in ensure_dir
+    os.makedirs(path)
+  File &quot;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py&quot;, line 150, in makedirs
+    makedirs(head, mode)
+  File &quot;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py&quot;, line 150, in makedirs
+    makedirs(head, mode)
+  File &quot;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py&quot;, line 157, in makedirs
+    mkdir(name, mode)
+OSError: [Errno 1] Operation not permitted: &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/share&#39;</code></pre><p>提示是权限问题，但是却发现改成root也是不能成功，搁置了一下。</p>
+<h3 id="0x01-SIP机制"><a href="#0x01-SIP机制" class="headerlink" title="0x01 SIP机制"></a>0x01 SIP机制</h3><p>google了很久发现了一个叫做SIP的机制被应用到MAC OSX EI Capitan中增加了一个SIP功能，不管你是不是su，都会阻止你在系统目录下进行操作……</p>
+<p>既然是一种机制，那就只能想着去关上就好了。<br>又找到了解决的办法：</p>
+<blockquote>
+<p>(1)重启OSX系统，然后按住Command+R</p>
+</blockquote>
+<blockquote>
+<p>(2)出现界面之后，选择Utilities menu中Terminal</p>
+</blockquote>
+<blockquote>
+<p>(3)在Terminal中输入csrutil disable关闭SIP(csrutil enable打开SIP)</p>
+</blockquote>
+<blockquote>
+<p>(4)重启reboot OSX</p>
+</blockquote>
+<h3 id="0x02-方式改进"><a href="#0x02-方式改进" class="headerlink" title="0x02 方式改进"></a>0x02 方式改进</h3><p>果然上面那种方法看着很难受，不过却从原理上解释了为什么会出现deny。</p>
+<p><strong>不过后来发现这并不是最优雅的方法！！</strong></p>
+<p><code>pip install ipython --user -U</code></p>
+<p>基于用户的权限来安装包。</p>
+<p>执行之后会提示：</p>
+<blockquote>
+<p>Installing collected packages: setuptools<br>Successfully installed setuptools-34.2.0</p>
+</blockquote>
+<p>继而安装成功setuptools.<br>再通过<strong>easy_install ipython</strong>就能成功安装ipython了。</p>
+<h3 id="0x03-引用"><a href="#0x03-引用" class="headerlink" title="0x03 引用"></a>0x03 引用</h3><p>1.<a href="http://xiaorui.cc/2016/03/27/解决mac-osx下pip安装ipython权限的问题/" target="_blank" rel="noopener">http://xiaorui.cc/2016/03/27/解决mac-osx下pip安装ipython权限的问题/</a></p>
+<p>2.<a href="http://www.freebuf.com/articles/system/97411.html" target="_blank" rel="noopener">http://www.freebuf.com/articles/system/97411.html</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/macOS/">macOS</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-test-of-CRC32" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/20/test-of-CRC32/" class="article-date">
+      <time datetime="2016-11-20T09:36:37.000Z" itemprop="datePublished">2016-11-20</time>
+</a>
+
+ 
+    <a href="/2016/11/20/test-of-CRC32/#comments" title="Comments">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2016/11/20/test-of-CRC32/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/20/test-of-CRC32/">初探CRC32</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>本来是一道MISC，在通过<code>binwalk</code>之后，发现这个数据包不仅是多个文件拼成，而且有密码。<br>搁平常，这道题就是无解了，不过看了一些writeup才发现，另有玄机。</p>
+<p>这是压缩包的内容，很明显提示了密码8位，这分分钟在暗示我们要爆破，然而爆破从何处入手？<br>关键点在于CRC32.</p>
+<p>##0x01 关于CRC32<br>每个文件都有一个不同的CRC32的值，.CRC是块数据的计算值,比如对每一个文件进行压缩.在一个解压缩过程中,程序会从新计算解压文件<br>的CRC值,并且将之与从文件中读取的CRC值进行比对,如果值相同,那么正确.</p>
+<p>在CRC32中, 会有1/2^32 的可能性发生对确认数据更改的校验错误.</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+        <p class="article-more-link">
+          <a href="/2016/11/20/test-of-CRC32/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-GitLeak" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/26/GitLeak/" class="article-date">
+      <time datetime="2016-10-26T08:50:03.000Z" itemprop="datePublished">2016-10-26</time>
+</a>
+
+ 
+    <a href="/2016/10/26/GitLeak/#comments" title="Comments">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2016/10/26/GitLeak/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/26/GitLeak/">关于Git/config.泄露的小结 及 assert()函数注入初探</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="0x00-写在前面"><a href="#0x00-写在前面" class="headerlink" title="0x00 写在前面"></a>0x00 写在前面</h2><p>晚上Ifuryst发了个web题链接玩玩<a href="http://web.chal.csaw.io:8000/" target="_blank" rel="noopener">http://web.chal.csaw.io:8000/</a></p>
+<p>浏览了一下发现了简直是直钩，<strong>你好我知道有猫腻。git泄漏！</strong></p>
+<h2 id="0x01-GitHack"><a href="#0x01-GitHack" class="headerlink" title="0x01 GitHack"></a>0x01 GitHack</h2><p>GitHack.py <a href="https://github.com/lijiejie/GitHack" target="_blank" rel="noopener">https://github.com/lijiejie/GitHack</a></p>
+<pre><code>python GitHack.py URL/.git</code></pre><p>检测到了相关目录并下载源码到我的本地。<br>flag.php的源码没啥东西…</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/CTF/">CTF</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2016/10/26/GitLeak/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2015-2019 Niko Pon
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+    
+
+    
+        <script id="dsq-count-scr" src="//http-www-nikochan-cc.disqus.com/count.js" async></script>
+        <script>
+            if ($(".left-col").is(":visible")) {
+                var $disqusCount = $(".disqus-comment-count");
+                $disqusCount.bind("DOMNodeInserted", function(e) {
+                    var num = $(this).text().replace(/[^0-9]/ig,"");
+                    if (num > 0) {
+                        $(this).siblings(".count-comment").text(num);
+                    }
+                    $(this).remove();
+                })
+            } else {
+                $(".disqus-comment-count").remove();
+            }
+        </script>
+     
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+             title: "a.article-title, .article-more-link a", 
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
