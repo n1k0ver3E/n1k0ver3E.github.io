@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Niko&#39;s blog">
 <meta property="og:description" content="0x00 写在前面饭偶像之后承担了写群机器人的工作，所以最近一直在鼓弄爬虫，写了集资实时监控，现在是微博监控，之后还要写其他东西…库亚西。 之前就看过很多爬微博的一些文章，不过大多需要模拟登录，或者是调用weibo的api，后来貌似API权限逐渐降低，也就变得不实用了。。。 手机版weibohttp://m.weibo.com后加uid便可以进行博文。 这个爬虫的小程序是通过手机版weibohtt">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-10T07:23:21.451Z">
+<meta property="og:updated_time" content="2019-09-17T05:02:43.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单的免登陆抓取新浪微博数据">
 <meta name="twitter:description" content="0x00 写在前面饭偶像之后承担了写群机器人的工作，所以最近一直在鼓弄爬虫，写了集资实时监控，现在是微博监控，之后还要写其他东西…库亚西。 之前就看过很多爬微博的一些文章，不过大多需要模拟登录，或者是调用weibo的api，后来貌似API权限逐渐降低，也就变得不实用了。。。 手机版weibohttp://m.weibo.com后加uid便可以进行博文。 这个爬虫的小程序是通过手机版weibohtt">
@@ -329,11 +329,12 @@
 <p>PS:虽然Query String字段有很多项，但仅需要uid和containerId就可以定位到置顶微博用户。</p>
 <h4 id="2-寻找所需要的请求"><a href="#2-寻找所需要的请求" class="headerlink" title="2. 寻找所需要的请求"></a>2. 寻找所需要的请求</h4><p>可见它是有很多JSON数据在一起的请求包</p>
 <p>而微博正文就隐藏在这个请求包中的mblog中</p>
-<h3 id="STEP-2-原始数据获取及转码"><a href="#STEP-2-原始数据获取及转码" class="headerlink" title="STEP 2. 原始数据获取及转码"></a>STEP 2. 原始数据获取及转码</h3><pre><code>import requests
+<h3 id="STEP-2-原始数据获取及转码"><a href="#STEP-2-原始数据获取及转码" class="headerlink" title="STEP 2. 原始数据获取及转码"></a>STEP 2. 原始数据获取及转码</h3><pre><code class="python">import requests
 url=&quot;https://m.weibo.cn/api/container/getIndex&quot;
 payload={&#39;type&#39;:&#39;uid&#39;,&#39;value&#39;:&#39;5879771257&#39;,&#39;containerid&#39;:&#39;1076035879771257&#39;}
 r=requests.post(url,data=payload)
-raw_text=r.text</code></pre><p>通过requests写一个简单的请求模拟.py3这一点还是很棒的，不需要额外unicode转成中文。<br>如果是py2的话还要<code>raw_text=r.text.encode().decode()</code><br>encode之后是byte格式，decode使其变成str格式。</p>
+raw_text=r.text</code></pre>
+<p>通过requests写一个简单的请求模拟.py3这一点还是很棒的，不需要额外unicode转成中文。<br>如果是py2的话还要<code>raw_text=r.text.encode().decode()</code><br>encode之后是byte格式，decode使其变成str格式。</p>
 <h3 id="STEP-3-JSON转换成dict"><a href="#STEP-3-JSON转换成dict" class="headerlink" title="STEP 3. JSON转换成dict"></a>STEP 3. JSON转换成dict</h3><p>数据本来就是JSON对象。通过<code>json.loads()</code>转换为python的数据字典dict.<br>再通过dict的定位就可以抓取到微博内容了。</p>
 <h2 id="0x02-代码"><a href="#0x02-代码" class="headerlink" title="0x02 代码"></a>0x02 代码</h2><pre><code>#原始URL:https://m.weibo.cn/api/container/getIndex?type=uid&amp;value=5931004865&amp;containerid=1076035931004865
 import requests
@@ -359,7 +360,7 @@ https://m.weibo.cn/api/container/getIndex?type=uid&amp;value=5879771257&amp;cont
         <p><span>Title:</span><a href="/2017/08/03/Crawlerweibonotloggin/">简单的免登陆抓取新浪微博数据</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Niko Pon</a></p>
         <p><span>Created:</span>2017-08-03, 03:01:10</p>
-        <p><span>Updated:</span>2019-09-10, 03:23:21</p>
+        <p><span>Updated:</span>2019-09-17, 01:02:43</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2017/08/03/Crawlerweibonotloggin/" title="简单的免登陆抓取新浪微博数据">www.nikochan.cc/2017/08/03/Crawlerweibonotloggin/</a>
             <span class="copy-path" data-clipboard-text="From www.nikochan.cc/2017/08/03/Crawlerweibonotloggin/　　By Niko Pon" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
