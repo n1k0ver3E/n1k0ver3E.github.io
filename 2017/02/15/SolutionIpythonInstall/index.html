@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>macOS 下通过pip安装Ipython权限问题解决 | Hexo</title>
+  <meta name="description" content="Originally wrote on Feb. 16th 2017  0x00 Before writing安装了pip之后就开始安装ipython了。使用sudo pip install ipython却一直显示_Operation notpermitted_这让我非常苦恼。  本机 macOS Sierra 10.12.3  12345678910111213141516171819202">
+<meta property="og:type" content="article">
+<meta property="og:title" content="macOS 下通过pip安装Ipython权限问题解决">
+<meta property="og:url" content="http://example.com/2017/02/15/SolutionIpythonInstall/index.html">
+<meta property="og:site_name" content="NikoVerse">
+<meta property="og:description" content="Originally wrote on Feb. 16th 2017  0x00 Before writing安装了pip之后就开始安装ipython了。使用sudo pip install ipython却一直显示_Operation notpermitted_这让我非常苦恼。  本机 macOS Sierra 10.12.3  12345678910111213141516171819202">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-02-15T20:50:12.000Z">
+<meta property="article:modified_time" content="2021-07-06T08:55:53.903Z">
+<meta property="article:author" content="Niko Pang">
+<meta property="article:tag" content="macOS">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2017/02/15/SolutionIpythonInstall/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="NikoVerse" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/pyf0311" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Pn1k0_</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Student@UNSW</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Tianjin, China &amp; Sydney AU.</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/PYF0311" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CyberSecurity/" rel="tag">CyberSecurity</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macOS/" rel="tag">macOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CyberSecurity/" style="font-size: 14px;">CyberSecurity</a> <a href="/tags/macOS/" style="font-size: 13px;">macOS</a> <a href="/tags/python/" style="font-size: 13px;">python</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2021/07/05/tags/" class="title">tags</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-07-05T14:30:54.000Z" itemprop="datePublished">2021-07-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2021/07/05/test/" class="title">test</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-07-05T14:28:56.000Z" itemprop="datePublished">2021-07-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2021/07/05/hello-world/" class="title">Hello World</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-07-05T09:58:11.180Z" itemprop="datePublished">2021-07-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2017/09/23/Burp2CrackActivity/" class="title">记一次有意思的burp抓包经历</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-09-23T21:21:01.000Z" itemprop="datePublished">2017-09-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2017/08/22/Crawlerweibonotloggin/" class="title">简单的免登陆抓取新浪微博数据</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-08-22T17:09:26.000Z" itemprop="datePublished">2017-08-23</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-SolutionIpythonInstall" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      macOS 下通过pip安装Ipython权限问题解决
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2017/02/15/SolutionIpythonInstall/" class="article-date">
+	  <time datetime="2017-02-15T20:50:12.000Z" itemprop="datePublished">2017-02-16</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/macOS/" rel="tag">macOS</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2017/02/15/SolutionIpythonInstall/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 584(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>Originally wrote on Feb. 16th 2017</p>
+</blockquote>
+<h3 id="0x00-Before-writing"><a href="#0x00-Before-writing" class="headerlink" title="0x00 Before writing"></a>0x00 Before writing</h3><p>安装了<code>pip</code>之后就开始安装<code>ipython</code>了。使用<code>sudo pip install ipython</code>却一直显示_Operation not<br>permitted_这让我非常苦恼。</p>
+<blockquote>
+<p>本机 macOS Sierra 10.12.3</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Exception:</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;/Library/Python/2.7/site-packages/pip/basecommand.py&quot;</span>, line 209, <span class="keyword">in</span> main</span><br><span class="line">    status = self.run(options, args)</span><br><span class="line">  File <span class="string">&quot;/Library/Python/2.7/site-packages/pip/commands/install.py&quot;</span>, line 317, <span class="keyword">in</span> run</span><br><span class="line">    prefix=options.prefix_path,</span><br><span class="line">  File <span class="string">&quot;/Library/Python/2.7/site-packages/pip/req/req_set.py&quot;</span>, line 732, <span class="keyword">in</span> install</span><br><span class="line">    **kwargs</span><br><span class="line">  File <span class="string">&quot;/Library/Python/2.7/site-packages/pip/req/req_install.py&quot;</span>, line 835, <span class="keyword">in</span> install</span><br><span class="line">    self.move_wheel_files(self.source_dir, root=root, prefix=prefix)</span><br><span class="line">  File <span class="string">&quot;/Library/Python/2.7/site-packages/pip/req/req_install.py&quot;</span>, line 1030, <span class="keyword">in</span> move_wheel_files</span><br><span class="line">    isolated=self.isolated,</span><br><span class="line">  File <span class="string">&quot;/Library/Python/2.7/site-packages/pip/wheel.py&quot;</span>, line 376, <span class="keyword">in</span> move_wheel_files</span><br><span class="line">    clobber(<span class="built_in">source</span>, dest, False, fixer=fixer, filter=filter)</span><br><span class="line">  File <span class="string">&quot;/Library/Python/2.7/site-packages/pip/wheel.py&quot;</span>, line 315, <span class="keyword">in</span> clobber</span><br><span class="line">    ensure_dir(destdir)</span><br><span class="line">  File <span class="string">&quot;/Library/Python/2.7/site-packages/pip/utils/__init__.py&quot;</span>, line 83, <span class="keyword">in</span> ensure_dir</span><br><span class="line">    os.makedirs(path)</span><br><span class="line">  File <span class="string">&quot;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py&quot;</span>, line 150, <span class="keyword">in</span> makedirs</span><br><span class="line">    makedirs(head, mode)</span><br><span class="line">  File <span class="string">&quot;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py&quot;</span>, line 150, <span class="keyword">in</span> makedirs</span><br><span class="line">    makedirs(head, mode)</span><br><span class="line">  File <span class="string">&quot;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py&quot;</span>, line 157, <span class="keyword">in</span> makedirs</span><br><span class="line">    mkdir(name, mode)</span><br><span class="line">OSError: [Errno 1] Operation not permitted: <span class="string">&#x27;/System/Library/Frameworks/Python.framework/Versions/2.7/share&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>提示是权限问题，但是却发现改成root也是不能成功，搁置了一下。</p>
+<h3 id="0x01-SIP机制"><a href="#0x01-SIP机制" class="headerlink" title="0x01 SIP机制"></a>0x01 SIP机制</h3><p>google了很久发现了一个叫做SIP的机制被应用到MAC OSX EI<br>Capitan中增加了一个SIP功能，不管你是不是su，都会阻止你在系统目录下进行操作……</p>
+<p>既然是一种机制，那就只能想着去关上就好了。<br>又找到了解决的办法：</p>
+<blockquote>
+<p>(1) 重启OSX系统，然后按住Command+R</p>
+<p>(2) 出现界面之后，选择Utilities menu中Terminal</p>
+<p>(3) 在Terminal中输入csrutil disable关闭SIP(csrutil enable打开SIP)</p>
+<p>(4) 重启reboot OSX</p>
+</blockquote>
+<h3 id="0x02-方式改进"><a href="#0x02-方式改进" class="headerlink" title="0x02 方式改进"></a>0x02 方式改进</h3><p>果然上面那种方法看着很难受，不过却从原理上解释了为什么会出现deny。</p>
+<p><strong>不过后来发现这并不是最优雅的方法！！</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install ipython --user -U</span><br></pre></td></tr></table></figure>
+
+<p>基于用户的权限来安装包。</p>
+<p>执行之后会提示：</p>
+<blockquote>
+<p>Installing collected packages: setuptools<br>Successfully installed setuptools-34.2.0</p>
+</blockquote>
+<p>继而安装成功setuptools.<br>再通过<code>easy_install ipython</code>就能成功安装ipython了。</p>
+<h3 id="0x03-引用"><a href="#0x03-引用" class="headerlink" title="0x03 引用"></a>0x03 引用</h3><ol>
+<li><p><a target="_blank" rel="noopener" href="http://xiaorui.cc/2016/03/27/%E8%A7%A3%E5%86%B3mac-osx%E4%B8%8Bpip%E5%AE%89%E8%A3%85ipython%E6%9D%83%E9%99%90%E7%9A%84%E9%97%AE%E9%A2%98/">http://xiaorui.cc/2016/03/27/解决mac-osx下pip安装ipython权限的问题/</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://www.freebuf.com/articles/system/97411.html">http://www.freebuf.com/articles/system/97411.html</a></p>
+</li>
+</ol>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2017/02/15/SolutionIpythonInstall/" title="macOS 下通过pip安装Ipython权限问题解决" target="_blank" rel="external">http://example.com/2017/02/15/SolutionIpythonInstall/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/pyf0311" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/pyf0311" target="_blank"><span class="text-dark">Pn1k0_</span><small class="ml-1x">Student@UNSW</small></a></h3>
+        <div>Tech. for better life.</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2017/08/22/Crawlerweibonotloggin/" title="简单的免登陆抓取新浪微博数据"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2016/10/25/GitLeak/" title="关于Git/config.泄露的小结 及 assert()函数注入初探"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/PYF0311" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
