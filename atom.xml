@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-07-13T18:36:59.426Z</updated>
+  <updated>2021-07-13T18:39:28.530Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2021/07/05/BeginningofDefi/"/>
     <id>http://example.com/2021/07/05/BeginningofDefi/</id>
     <published>2021-07-05T23:25:33.000Z</published>
-    <updated>2021-07-13T18:36:59.426Z</updated>
+    <updated>2021-07-13T18:39:28.530Z</updated>
     
     
       
@@ -31,8 +31,8 @@
     
     
     
+    <category term="Crypto" scheme="http://example.com/categories/Crypto/"/>
     
-    <category term="Crypto" scheme="http://example.com/tags/Crypto/"/>
     
     <category term="Defi" scheme="http://example.com/tags/Defi/"/>
     
@@ -43,7 +43,7 @@
     <link href="http://example.com/2017/09/23/Burp2CrackActivity/"/>
     <id>http://example.com/2017/09/23/Burp2CrackActivity/</id>
     <published>2017-09-23T21:21:01.000Z</published>
-    <updated>2021-07-06T09:22:06.762Z</updated>
+    <updated>2021-07-13T18:42:46.215Z</updated>
     
     
       
@@ -56,8 +56,10 @@
     
     
     
+    <category term="Record" scheme="http://example.com/categories/Record/"/>
     
-    <category term="CyberSecurity" scheme="http://example.com/tags/CyberSecurity/"/>
+    
+    <category term="Security" scheme="http://example.com/tags/Security/"/>
     
   </entry>
   
@@ -66,7 +68,7 @@
     <link href="http://example.com/2017/08/22/Crawlerweibonotloggin/"/>
     <id>http://example.com/2017/08/22/Crawlerweibonotloggin/</id>
     <published>2017-08-22T17:09:26.000Z</published>
-    <updated>2021-07-06T08:44:23.932Z</updated>
+    <updated>2021-07-13T18:43:52.277Z</updated>
     
     
       
@@ -79,8 +81,12 @@
     
     
     
+    <category term="Tutorial" scheme="http://example.com/categories/Tutorial/"/>
     
-    <category term="python" scheme="http://example.com/tags/python/"/>
+    
+    <category term="Crawl" scheme="http://example.com/tags/Crawl/"/>
+    
+    <category term="Python" scheme="http://example.com/tags/Python/"/>
     
   </entry>
   
@@ -89,7 +95,7 @@
     <link href="http://example.com/2017/02/15/SolutionIpythonInstall/"/>
     <id>http://example.com/2017/02/15/SolutionIpythonInstall/</id>
     <published>2017-02-15T20:50:12.000Z</published>
-    <updated>2021-07-06T08:55:53.903Z</updated>
+    <updated>2021-07-13T18:43:20.172Z</updated>
     
     
       
@@ -102,8 +108,12 @@
     
     
     
+    <category term="Tutorial" scheme="http://example.com/categories/Tutorial/"/>
+    
     
     <category term="macOS" scheme="http://example.com/tags/macOS/"/>
+    
+    <category term="Python" scheme="http://example.com/tags/Python/"/>
     
   </entry>
   
@@ -112,7 +122,7 @@
     <link href="http://example.com/2016/10/25/GitLeak/"/>
     <id>http://example.com/2016/10/25/GitLeak/</id>
     <published>2016-10-25T20:57:43.000Z</published>
-    <updated>2021-07-06T09:06:16.040Z</updated>
+    <updated>2021-07-13T18:43:10.472Z</updated>
     
     
       
@@ -125,8 +135,10 @@
     
     
     
+    <category term="Note" scheme="http://example.com/categories/Note/"/>
     
-    <category term="CyberSecurity" scheme="http://example.com/tags/CyberSecurity/"/>
+    
+    <category term="Security" scheme="http://example.com/tags/Security/"/>
     
   </entry>
   
