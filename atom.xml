@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-07-13T17:37:53.704Z</updated>
+  <updated>2021-07-13T18:36:59.426Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2021/07/05/BeginningofDefi/"/>
     <id>http://example.com/2021/07/05/BeginningofDefi/</id>
     <published>2021-07-05T23:25:33.000Z</published>
-    <updated>2021-07-13T17:37:53.704Z</updated>
+    <updated>2021-07-13T18:36:59.426Z</updated>
     
     
       
@@ -32,7 +32,9 @@
     
     
     
-    <category term="Crypto, Defi" scheme="http://example.com/tags/Crypto-Defi/"/>
+    <category term="Crypto" scheme="http://example.com/tags/Crypto/"/>
+    
+    <category term="Defi" scheme="http://example.com/tags/Defi/"/>
     
   </entry>
   
