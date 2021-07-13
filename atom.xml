@@ -3,11 +3,11 @@
   <title>Niko Verse</title>
   
   <subtitle>Tech. for better life.</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="http://blog.nikopang.com/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="http://blog.nikopang.com/"/>
   <updated>2021-07-13T18:39:28.530Z</updated>
-  <id>http://example.com/</id>
+  <id>http://blog.nikopang.com/</id>
   
   <author>
     <name>Niko Pang</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>DeFi之旅：从单币抢头矿到链上数据追踪</title>
-    <link href="http://example.com/2021/07/05/BeginningofDefi/"/>
-    <id>http://example.com/2021/07/05/BeginningofDefi/</id>
+    <link href="http://blog.nikopang.com/2021/07/05/BeginningofDefi/"/>
+    <id>http://blog.nikopang.com/2021/07/05/BeginningofDefi/</id>
     <published>2021-07-05T23:25:33.000Z</published>
     <updated>2021-07-13T18:39:28.530Z</updated>
     
@@ -31,17 +31,17 @@
     
     
     
-    <category term="Crypto" scheme="http://example.com/categories/Crypto/"/>
+    <category term="Crypto" scheme="http://blog.nikopang.com/categories/Crypto/"/>
     
     
-    <category term="Defi" scheme="http://example.com/tags/Defi/"/>
+    <category term="Defi" scheme="http://blog.nikopang.com/tags/Defi/"/>
     
   </entry>
   
   <entry>
     <title>记一次有意思的burp抓包经历</title>
-    <link href="http://example.com/2017/09/23/Burp2CrackActivity/"/>
-    <id>http://example.com/2017/09/23/Burp2CrackActivity/</id>
+    <link href="http://blog.nikopang.com/2017/09/23/Burp2CrackActivity/"/>
+    <id>http://blog.nikopang.com/2017/09/23/Burp2CrackActivity/</id>
     <published>2017-09-23T21:21:01.000Z</published>
     <updated>2021-07-13T18:42:46.215Z</updated>
     
@@ -56,17 +56,17 @@
     
     
     
-    <category term="Record" scheme="http://example.com/categories/Record/"/>
+    <category term="Record" scheme="http://blog.nikopang.com/categories/Record/"/>
     
     
-    <category term="Security" scheme="http://example.com/tags/Security/"/>
+    <category term="Security" scheme="http://blog.nikopang.com/tags/Security/"/>
     
   </entry>
   
   <entry>
     <title>简单的免登陆抓取新浪微博数据</title>
-    <link href="http://example.com/2017/08/22/Crawlerweibonotloggin/"/>
-    <id>http://example.com/2017/08/22/Crawlerweibonotloggin/</id>
+    <link href="http://blog.nikopang.com/2017/08/22/Crawlerweibonotloggin/"/>
+    <id>http://blog.nikopang.com/2017/08/22/Crawlerweibonotloggin/</id>
     <published>2017-08-22T17:09:26.000Z</published>
     <updated>2021-07-13T18:43:52.277Z</updated>
     
@@ -81,19 +81,19 @@
     
     
     
-    <category term="Tutorial" scheme="http://example.com/categories/Tutorial/"/>
+    <category term="Tutorial" scheme="http://blog.nikopang.com/categories/Tutorial/"/>
     
     
-    <category term="Crawl" scheme="http://example.com/tags/Crawl/"/>
+    <category term="Crawl" scheme="http://blog.nikopang.com/tags/Crawl/"/>
     
-    <category term="Python" scheme="http://example.com/tags/Python/"/>
+    <category term="Python" scheme="http://blog.nikopang.com/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>macOS 下通过pip安装Ipython权限问题解决</title>
-    <link href="http://example.com/2017/02/15/SolutionIpythonInstall/"/>
-    <id>http://example.com/2017/02/15/SolutionIpythonInstall/</id>
+    <link href="http://blog.nikopang.com/2017/02/15/SolutionIpythonInstall/"/>
+    <id>http://blog.nikopang.com/2017/02/15/SolutionIpythonInstall/</id>
     <published>2017-02-15T20:50:12.000Z</published>
     <updated>2021-07-13T18:43:20.172Z</updated>
     
@@ -108,19 +108,19 @@
     
     
     
-    <category term="Tutorial" scheme="http://example.com/categories/Tutorial/"/>
+    <category term="Tutorial" scheme="http://blog.nikopang.com/categories/Tutorial/"/>
     
     
-    <category term="macOS" scheme="http://example.com/tags/macOS/"/>
+    <category term="macOS" scheme="http://blog.nikopang.com/tags/macOS/"/>
     
-    <category term="Python" scheme="http://example.com/tags/Python/"/>
+    <category term="Python" scheme="http://blog.nikopang.com/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>关于Git/config.泄露的小结 及 assert()函数注入初探</title>
-    <link href="http://example.com/2016/10/25/GitLeak/"/>
-    <id>http://example.com/2016/10/25/GitLeak/</id>
+    <link href="http://blog.nikopang.com/2016/10/25/GitLeak/"/>
+    <id>http://blog.nikopang.com/2016/10/25/GitLeak/</id>
     <published>2016-10-25T20:57:43.000Z</published>
     <updated>2021-07-13T18:43:10.472Z</updated>
     
@@ -135,10 +135,10 @@
     
     
     
-    <category term="Note" scheme="http://example.com/categories/Note/"/>
+    <category term="Note" scheme="http://blog.nikopang.com/categories/Note/"/>
     
     
-    <category term="Security" scheme="http://example.com/tags/Security/"/>
+    <category term="Security" scheme="http://blog.nikopang.com/tags/Security/"/>
     
   </entry>
   

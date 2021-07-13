@@ -2,56 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2017/08/22/Crawlerweibonotloggin/</loc>
+    <loc>http://blog.nikopang.com/repository/index.html</loc>
     
     <lastmod>2021-07-13</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2017/02/15/SolutionIpythonInstall/</loc>
+    <loc>http://blog.nikopang.com/2017/08/22/Crawlerweibonotloggin/</loc>
     
     <lastmod>2021-07-13</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2016/10/25/GitLeak/</loc>
+    <loc>http://blog.nikopang.com/2017/02/15/SolutionIpythonInstall/</loc>
     
     <lastmod>2021-07-13</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2017/09/23/Burp2CrackActivity/</loc>
+    <loc>http://blog.nikopang.com/2016/10/25/GitLeak/</loc>
     
     <lastmod>2021-07-13</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2021/07/05/BeginningofDefi/</loc>
+    <loc>http://blog.nikopang.com/2017/09/23/Burp2CrackActivity/</loc>
     
     <lastmod>2021-07-13</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/tags/index.html</loc>
+    <loc>http://blog.nikopang.com/2021/07/05/BeginningofDefi/</loc>
     
     <lastmod>2021-07-13</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/categories/index.html</loc>
+    <loc>http://blog.nikopang.com/tags/index.html</loc>
     
     <lastmod>2021-07-13</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/about/index.html</loc>
+    <loc>http://blog.nikopang.com/categories/index.html</loc>
+    
+    <lastmod>2021-07-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.nikopang.com/about/index.html</loc>
     
     <lastmod>2021-07-06</lastmod>
     
@@ -59,7 +66,7 @@
   
 
   <url>
-    <loc>http://example.com/</loc>
+    <loc>http://blog.nikopang.com/</loc>
     <lastmod>2021-07-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -67,35 +74,35 @@
 
   
   <url>
-    <loc>http://example.com/tags/macOS/</loc>
+    <loc>http://blog.nikopang.com/tags/macOS/</loc>
     <lastmod>2021-07-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/Defi/</loc>
+    <loc>http://blog.nikopang.com/tags/Defi/</loc>
     <lastmod>2021-07-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/Crawl/</loc>
+    <loc>http://blog.nikopang.com/tags/Crawl/</loc>
     <lastmod>2021-07-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/Security/</loc>
+    <loc>http://blog.nikopang.com/tags/Security/</loc>
     <lastmod>2021-07-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/Python/</loc>
+    <loc>http://blog.nikopang.com/tags/Python/</loc>
     <lastmod>2021-07-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -104,28 +111,28 @@
 
   
   <url>
-    <loc>http://example.com/categories/Crypto/</loc>
+    <loc>http://blog.nikopang.com/categories/Crypto/</loc>
     <lastmod>2021-07-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/Tutorial/</loc>
+    <loc>http://blog.nikopang.com/categories/Tutorial/</loc>
     <lastmod>2021-07-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/Record/</loc>
+    <loc>http://blog.nikopang.com/categories/Record/</loc>
     <lastmod>2021-07-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/Note/</loc>
+    <loc>http://blog.nikopang.com/categories/Note/</loc>
     <lastmod>2021-07-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
