@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Niko Verse</title>
+  <title>NikoVerse</title>
   
-  <subtitle>Tech. for better life.</subtitle>
+  <subtitle>记录些什么的自留地</subtitle>
   <link href="http://blog.nikopang.com/atom.xml" rel="self"/>
   
   <link href="http://blog.nikopang.com/"/>
-  <updated>2021-07-13T18:39:28.530Z</updated>
+  <updated>2021-09-08T13:57:22.893Z</updated>
   <id>http://blog.nikopang.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://blog.nikopang.com/2021/07/05/BeginningofDefi/"/>
     <id>http://blog.nikopang.com/2021/07/05/BeginningofDefi/</id>
     <published>2021-07-05T23:25:33.000Z</published>
-    <updated>2021-07-13T18:39:28.530Z</updated>
+    <updated>2021-09-08T13:57:22.893Z</updated>
     
     
       
