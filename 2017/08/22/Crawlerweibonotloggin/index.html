@@ -51,6 +51,8 @@
   
   
   
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.css">
+  
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
@@ -546,9 +548,7 @@ for i in range(10):
     
   <section id="comments">
   	
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      </div>
+           
     
   </section>
 
@@ -699,21 +699,23 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
    
     
-    <script defer>
-    var disqus_config = function () {
-        
-            this.page.url = 'http://blog.nikopang.com/2017/08/22/Crawlerweibonotloggin/';
-        
-        this.page.identifier = 'Crawlerweibonotloggin';
-    };
-    (function() { 
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'evapon' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
+  <!-- <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"> -->
+  <script src="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '717cb2ed9636fc327ad6',
+    clientSecret: 'c6c734876dfd3d0901fa7c0ac4503d06b3721657',
+    repo: 'n1k0ver3E.github.io',
+    owner: 'n1k0ver3E',
+    admin: ['n1k0ver3E'],
+    id: md5(location.pathname),
+    distractionFreeMode: true
+  })
+  gitalk.render('comments')
+  </script>
 
+      
 
 
 
