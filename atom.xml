@@ -97,9 +97,9 @@
     <category term="Tutorial" scheme="http://blog.nikopang.com/categories/Tutorial/"/>
     
     
-    <category term="Crawl" scheme="http://blog.nikopang.com/tags/Crawl/"/>
-    
     <category term="Python" scheme="http://blog.nikopang.com/tags/Python/"/>
+    
+    <category term="Crawl" scheme="http://blog.nikopang.com/tags/Crawl/"/>
     
   </entry>
   
@@ -124,9 +124,9 @@
     <category term="Tutorial" scheme="http://blog.nikopang.com/categories/Tutorial/"/>
     
     
-    <category term="macOS" scheme="http://blog.nikopang.com/tags/macOS/"/>
-    
     <category term="Python" scheme="http://blog.nikopang.com/tags/Python/"/>
+    
+    <category term="macOS" scheme="http://blog.nikopang.com/tags/macOS/"/>
     
   </entry>
   
