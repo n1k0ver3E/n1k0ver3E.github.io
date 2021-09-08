@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.nikopang.com/link/index.html</loc>
+    
+    <lastmod>2021-09-08</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.nikopang.com/repository/index.html</loc>
     
     <lastmod>2021-07-13</lastmod>
