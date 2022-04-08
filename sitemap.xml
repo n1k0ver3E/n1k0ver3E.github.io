@@ -95,13 +95,6 @@
 
   
   <url>
-    <loc>http://blog.nikopang.com/tags/Defi/</loc>
-    <lastmod>2022-04-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.nikopang.com/tags/Security/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>daily</changefreq>
@@ -117,6 +110,13 @@
   
   <url>
     <loc>http://blog.nikopang.com/tags/Crawl/</loc>
+    <lastmod>2022-04-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.nikopang.com/tags/Defi/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -139,13 +139,6 @@
 
   
   <url>
-    <loc>http://blog.nikopang.com/categories/Crypto/</loc>
-    <lastmod>2022-04-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.nikopang.com/categories/Record/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>daily</changefreq>
@@ -161,6 +154,13 @@
   
   <url>
     <loc>http://blog.nikopang.com/categories/Note/</loc>
+    <lastmod>2022-04-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.nikopang.com/categories/Crypto/</loc>
     <lastmod>2022-04-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
