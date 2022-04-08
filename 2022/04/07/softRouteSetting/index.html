@@ -1,0 +1,252 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>k2p+树莓派4b：我家的软路由网络配置分享 | Niko の 里屋</title><meta name="keywords" content="raspberrypi"><meta name="author" content="Niko Pang"><meta name="copyright" content="Niko Pang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="k2p+树莓派4b：我家的软路由网络配置分享这篇文章是介绍以k2p作为主路由，以树莓派4b作为旁路由的软路由网络配置。我家的入户宽带是500M，由于装修已久，因此受预埋网线限制从物理角度不具备千兆网络的能力，主路由也未更换为Wi-Fi6路由设备。（之前升级过千兆但由于物理限制无线测速弱鸡遂退回至原网络） 因此在目前我家的网络条件下，k2p仍旧可堪而用。之前是将k2p（硬路由）刷入openwrt来实">
+<meta property="og:type" content="article">
+<meta property="og:title" content="k2p+树莓派4b：我家的软路由网络配置分享">
+<meta property="og:url" content="http://blog.nikopang.com/2022/04/07/softRouteSetting/index.html">
+<meta property="og:site_name" content="Niko の 里屋">
+<meta property="og:description" content="k2p+树莓派4b：我家的软路由网络配置分享这篇文章是介绍以k2p作为主路由，以树莓派4b作为旁路由的软路由网络配置。我家的入户宽带是500M，由于装修已久，因此受预埋网线限制从物理角度不具备千兆网络的能力，主路由也未更换为Wi-Fi6路由设备。（之前升级过千兆但由于物理限制无线测速弱鸡遂退回至原网络） 因此在目前我家的网络条件下，k2p仍旧可堪而用。之前是将k2p（硬路由）刷入openwrt来实">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/pyf0311/myPrivateIMGBed/markdown/1649428124453.jpeg">
+<meta property="article:published_time" content="2022-04-08T02:25:00.000Z">
+<meta property="article:modified_time" content="2022-04-08T14:35:34.694Z">
+<meta property="article:author" content="Niko Pang">
+<meta property="article:tag" content="raspberrypi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/pyf0311/myPrivateIMGBed/markdown/1649428124453.jpeg"><link rel="shortcut icon" href="/local/favicon.png"><link rel="canonical" href="http://blog.nikopang.com/2022/04/07/softRouteSetting/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Niko Pang","link":"链接: ","source":"来源: Niko の 里屋","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'k2p+树莓派4b：我家的软路由网络配置分享',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-04-08 22:35:34'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Niko の 里屋" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/local/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-book"></i><span> 博客</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-icons"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音樂</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 電影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-ghost"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/pyf0311/myPrivateIMGBed/markdown/1649428124453.jpeg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Niko の 里屋</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-book"></i><span> 博客</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-icons"></i><span> 生活</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音樂</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 電影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-ghost"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">k2p+树莓派4b：我家的软路由网络配置分享</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-04-08T02:25:00.000Z" title="发表于 2022-04-08 10:25:00">2022-04-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-04-08T14:35:34.694Z" title="更新于 2022-04-08 22:35:34">2022-04-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/DIY/">DIY</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="k2p+树莓派4b：我家的软路由网络配置分享"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="k2p-树莓派4b：我家的软路由网络配置分享"><a href="#k2p-树莓派4b：我家的软路由网络配置分享" class="headerlink" title="k2p+树莓派4b：我家的软路由网络配置分享"></a>k2p+树莓派4b：我家的软路由网络配置分享</h1><p>这篇文章是介绍以k2p作为主路由，以树莓派4b作为旁路由的软路由网络配置。我家的入户宽带是500M，由于装修已久，因此受预埋网线限制从物理角度不具备千兆网络的能力，主路由也未更换为Wi-Fi6路由设备。（之前升级过千兆但由于物理限制无线测速弱鸡遂退回至原网络）</p>
+<p>因此在目前我家的网络条件下，k2p仍旧可堪而用。之前是将k2p（硬路由）刷入openwrt来实现科学上网等需求，但k2p的cpu mt7621实在太辣鸡，aes算法主要通过cpu进行计算，因此动不动占有率飙满造成断线崩溃。为了能保持使用更稳定，苟是绝不能苟的，因此选择继续折腾将RPi 4b设置为旁路由，作为网关接受全部网络数据并转发回给主路由，以实现科学上网，去广告等目的。</p>
+<p><strong>是的，2022年k2p绝不认输。</strong></p>
+<p>油管的视频主有对2g内存的矿渣树莓派4b进行软路由评测，<a target="_blank" rel="noopener" href="https://youtu.be/U19B09tXLd4">链接点这里</a>，算是一款性能很好的arm软路由。（不过现在性价比太低了，天知道怎么2022年RPi 4b 4g 卖上了千元…）博主是400块买的。</p>
+<p>话不多说，我们开始设置。</p>
+<h2 id="1-设置旁路由"><a href="#1-设置旁路由" class="headerlink" title="1. 设置旁路由"></a>1. 设置旁路由</h2><p>RPi 4b作为旁路由，固件我选择的是sulingGG的固件（<a target="_blank" rel="noopener" href="https://github.com/SuLingGG/OpenWrt-Rpi">github链接</a>，<a target="_blank" rel="noopener" href="https://adoc.openwrt.cc/2-OpenWrt-Rpi/1-Download/">项目文档</a>）每日会根据openwrt的源码自动编译，功能丰富，且整合程度比较高。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/pyf0311/myPrivateIMGBed/markdown/1649422787618.png" alt="image-20220408205946882"></p>
+<h3 id="刷入固件"><a href="#刷入固件" class="headerlink" title="刷入固件"></a>刷入固件</h3><p>这里我们连接读卡器，下载刷固件的软件「balenaEtcher」，</p>
+<p>镜像这里我使用的是<code>immortalwrt-bcm27xx-bcm2711-rpi-4-ext4-factory.img.gz</code>，下载后可解压为img镜像。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/pyf0311/myPrivateIMGBed/markdown/1649422941004.png" alt="image-20220408210220508"></p>
+<p>选中镜像 - 选择安装的tf卡 - 之后点击刷写</p>
+<p>整个过程持续大概20秒左右。</p>
+<h3 id="进行lan口配置"><a href="#进行lan口配置" class="headerlink" title="进行lan口配置"></a>进行lan口配置</h3><p>刷好固件后，将tf卡插入树莓派中，并重启树莓派，用网线连接树莓派和pc，关闭Wi-Fi，稍等1-2分钟，输入192.168.1.1进入旁路由后台管理页面。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/pyf0311/myPrivateIMGBed/markdown/1649423267774.png" alt="image-20220408210747147"></p>
+<p>账号密码是<code>root/password</code>.</p>
+<p>在网络 - 接口 - 接口总览 - lan口 点击修改，</p>
+<ul>
+<li><p>ipv4地址：需要设置为与主路由同一网段内，这里我的主路由ip为192.168.2.1，因此我选择是最后一位+1，（需要确保这个ip是未使用的状态），设置为192.168.2.2</p>
+</li>
+<li><p>ipv4网关：需要设为主路由ip，这里是192.168.2.1</p>
+</li>
+<li><p>使用自定义的DNS服务器：需要设为主路由ip，这里是192.168.2.1</p>
+</li>
+<li><p>ipv6分配长度：选择禁用</p>
+</li>
+<li><p>关闭DHCP：需要关闭dhcp，在下面中勾选「忽略此接口」</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/pyf0311/myPrivateIMGBed/markdown/1649423372763.png" alt="image-20220408210932133"></p>
+<p>修改后点击保存/应用。</p>
+<p>很快，应用就会适配，但是页面不会更新，因为ip已经改为和主路由在同一网段的ip地址了。</p>
+<p>现在可以将网线连入RPi的网口和主路由的任一lan口，连入ssid为openwrt的RPi的无线网络，再输入修改后的ip（这里是192.168.2.2），即可进入旁路由的后台管理页面。</p>
+<p>在主路由可以正常上网的状态下，点击网络 - 诊断 - ping，可以检测网路是否通畅，正常情况下是可以ping通的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/pyf0311/myPrivateIMGBed/markdown/1649423939484.png" alt="image-20220408211858532"></p>
+<h3 id="设置防火墙"><a href="#设置防火墙" class="headerlink" title="设置防火墙"></a>设置防火墙</h3><p>在网络 - 防火墙中进行设置，常规设置中是默认的配置，未开启ip动态伪装。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/pyf0311/myPrivateIMGBed/markdown/1649426252201.png" alt="image-20220408215731588"></p>
+<p>自定义配置中添加一条规则：</p>
+<p><code>iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE</code></p>
+<h2 id="2-设置主路由"><a href="#2-设置主路由" class="headerlink" title="2. 设置主路由"></a>2. 设置主路由</h2><p>这里我的主路由k2p使用的是padavan的固件，碎碎念一下，最开始主路由使用的是lean大编译的内核版本为<code>5.4.69</code>的openwrt固件，但是设置旁路由模式后小毛病不断，主路由无线功能异常，youtube视频dns解析异常。。。因此换成更为稳定的老毛子固件，<code>hanwckfK2P_nano-5.0.trx</code>，这一版为纯净版，不带有其他应用，养老养老啦～ （<a target="_blank" rel="noopener" href="https://github.com/n1k0ver3E/K2P_fireware_bak/tree/master/5_padavan">固件下载</a>，<a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8220379&extra=page=1&filter=typeid&typeid=14&page=1">相关固件说明</a>）</p>
+<h3 id="设置WAN"><a href="#设置WAN" class="headerlink" title="设置WAN"></a>设置WAN</h3><p>有在恩山看到不修改硬件加速会出现问题。因此，硬件NAT加速修改为：offload TCP/UDP for LAN</p>
+<p><img src="https://cdn.jsdelivr.net/gh/pyf0311/myPrivateIMGBed/markdown/1649424411531.png" alt="image-20220408212650891"></p>
+<h3 id="设置LAN"><a href="#设置LAN" class="headerlink" title="设置LAN"></a>设置LAN</h3><p>这里我们进行DHCP的相关设置：</p>
+<ul>
+<li>起始地址：填写旁路由的ip</li>
+<li>默认网关：填写旁路由的ip</li>
+<li>DNS服务器中填写3个，分别是旁路由ip，以及几个常用的dns服务器</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/pyf0311/myPrivateIMGBed/markdown/1649424628672.png" alt="image-20220408213028050"></p>
+<p>到这里，大部分的设置已完成，应用并重启，可以愉快的进行网络冲浪了。</p>
+<p>之后可以在旁路由中设置科学上网的相关配置，我使用的是passwall，设置完毕后连接主路由的无线网络，可以发现科学上网功能已畅通。</p>
+<h2 id="3-一些测速结果"><a href="#3-一些测速结果" class="headerlink" title="3. 一些测速结果"></a>3. 一些测速结果</h2><p>连接主路由，在speedtest中测速为380Mbps，youtube视频连接速度可达到36Mbps. （皆为无线网络连接）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/pyf0311/myPrivateIMGBed/markdown/1649427644602.png" alt="image-20220408222043873"></p>
+<h2 id="4-设置中遇到的问题"><a href="#4-设置中遇到的问题" class="headerlink" title="4. 设置中遇到的问题"></a>4. 设置中遇到的问题</h2><h3 id="google正常，youtube网页正常，youtube视频无法访问？"><a href="#google正常，youtube网页正常，youtube视频无法访问？" class="headerlink" title="google正常，youtube网页正常，youtube视频无法访问？"></a>google正常，youtube网页正常，youtube视频无法访问？</h3><p>分析是dns的问题，会自动解析到youtube的ipv6的dns导致视频无法观看，因此可以在旁路由后台，网络 - DHCP/DNS - 高级设置中，勾选禁止解析 IPv6 DNS 记录，即可解决。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Niko Pang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://blog.nikopang.com/2022/04/07/softRouteSetting/">http://blog.nikopang.com/2022/04/07/softRouteSetting/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://blog.nikopang.com" target="_blank">Niko の 里屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/raspberrypi/">raspberrypi</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/pyf0311/myPrivateIMGBed/markdown/1649428124453.jpeg" data-sites="wechat,weibo,qq,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/local/donate/wechat.png" target="_blank"><img class="post-qr-code-img" src="/local/donate/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/local/donate/alipay.png" target="_blank"><img class="post-qr-code-img" src="/local/donate/alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2021/09/08/SolanaNote/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">SolanaNote</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#k2p-%E6%A0%91%E8%8E%93%E6%B4%BE4b%EF%BC%9A%E6%88%91%E5%AE%B6%E7%9A%84%E8%BD%AF%E8%B7%AF%E7%94%B1%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%88%86%E4%BA%AB"><span class="toc-text">k2p+树莓派4b：我家的软路由网络配置分享</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%AE%BE%E7%BD%AE%E6%97%81%E8%B7%AF%E7%94%B1"><span class="toc-text">1. 设置旁路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%B7%E5%85%A5%E5%9B%BA%E4%BB%B6"><span class="toc-text">刷入固件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E8%A1%8Clan%E5%8F%A3%E9%85%8D%E7%BD%AE"><span class="toc-text">进行lan口配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-text">设置防火墙</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%AE%BE%E7%BD%AE%E4%B8%BB%E8%B7%AF%E7%94%B1"><span class="toc-text">2. 设置主路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEWAN"><span class="toc-text">设置WAN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AELAN"><span class="toc-text">设置LAN</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%B8%80%E4%BA%9B%E6%B5%8B%E9%80%9F%E7%BB%93%E6%9E%9C"><span class="toc-text">3. 一些测速结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">4. 设置中遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#google%E6%AD%A3%E5%B8%B8%EF%BC%8Cyoutube%E7%BD%91%E9%A1%B5%E6%AD%A3%E5%B8%B8%EF%BC%8Cyoutube%E8%A7%86%E9%A2%91%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%EF%BC%9F"><span class="toc-text">google正常，youtube网页正常，youtube视频无法访问？</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/pyf0311/myPrivateIMGBed/markdown/1649428124453.jpeg')"><div id="footer-wrap"><div class="copyright">&copy;2016 - 2022 By Niko Pang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '717cb2ed9636fc327ad6',
+      clientSecret: 'c6c734876dfd3d0901fa7c0ac4503d06b3721657',
+      repo: 'n1k0ver3E.github.io',
+      owner: 'n1k0ver3E',
+      admin: ['n1k0ver3E'],
+      id: '35b0d1f3d009bfc984f313f1962c2a7b',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
